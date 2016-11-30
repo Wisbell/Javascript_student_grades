@@ -68,9 +68,29 @@ function how_many() {
 function lowest_grade(scores) {
 	var lowest = scores[0]
 
-	for (var i = 0; i < scores.length; i++) {
-		
+	for (var i = 1; i < scores.length; i++) {
+
+		if (scores[i] < lowest) {
+			lowest = scores[i];
+		}
 	}
+
+	console.log("The lowest grade is " + lowest);
+}
+
+function highest_grade(scores){
+	var highest = scores[0]
+
+	for (var i = 1; i < scores.length; i++) {
+
+		if (scores[i] > highest) {
+			highest = scores[i];
+		}
+	}
+
+	console.log("The highest grade is " + highest);
 }
 
 how_many();
+lowest_grade(scores);
+highest_grade(scores);
