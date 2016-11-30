@@ -32,38 +32,42 @@ var grades = {
 	'f': 0
 }
 
-for (var i = 0; i < scores.length; i++) {
+function sort_grades() {
+	for (var i = 0; i < scores.length; i++) {
+		//console.log(scores[i])
+		if (scores[i] > 90) {
+			//console.log("a test")
+			grades.a+=1;
+		} 
 
-	if (scores[i] > 90) {
-		grades.a++;
-	} 
+		if (scores[i] > 80) {
+			grades.b+=1;
+		} 
 
-	if (scores[i] > 80) {
-		grades.b++;
-	} 
+		if (scores[i] > 70) {
+			grades.c+=1;
+		} 
 
-	if (scores[i] > 70) {
-		grades.c++;
-	} 
+		if (scores[i] > 60) {
+			grades.d+=1;
+		} 
 
-	if (scores[i] > 60) {
-		grades.d++;
-	} 
-
-	if (scores[i] > 50) {
-		grades.f++;
-	} 
+		if (scores[i] > 50) {
+			grades.f+=1;
+		} 
+	}
 }
 
-console.log("test");
 
 function how_many() {
 	console.log("How many in each grade?");
 
 	for (letter in grades) {
-		console.log(letter + ": " + grades.letter);
+		console.log(letter + ": " + grades[letter]);
 	}
+	console.log("\n")
 }
+
 
 function lowest_grade(scores) {
 	var lowest = scores[0]
@@ -76,7 +80,9 @@ function lowest_grade(scores) {
 	}
 
 	console.log("The lowest grade is " + lowest);
+	console.log("\n")
 }
+
 
 function highest_grade(scores){
 	var highest = scores[0]
@@ -89,8 +95,12 @@ function highest_grade(scores){
 	}
 
 	console.log("The highest grade is " + highest);
+	console.log("\n")
 }
 
+
+// Call my functions
+sort_grades();
 how_many();
 lowest_grade(scores);
 highest_grade(scores);
